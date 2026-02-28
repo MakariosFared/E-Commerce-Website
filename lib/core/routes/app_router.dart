@@ -1,6 +1,7 @@
 import 'package:e_commerce/features/cart/views/cart_screen.dart';
 import 'package:e_commerce/features/home/views/home_screen.dart';
 import 'package:e_commerce/features/product_details/views/product_details_screen.dart';
+import 'package:e_commerce/features/checkout/views/checkout_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -20,6 +21,11 @@ final GoRouter appRouter = GoRouter(
       path: '/cart',
       name: 'cart',
       builder: (context, state) => const CartScreen(),
+    ),
+    GoRoute(
+      path: '/checkout',
+      name: 'checkout',
+      builder: (context, state) => const CheckoutScreen(),
     ),
   ],
 );
