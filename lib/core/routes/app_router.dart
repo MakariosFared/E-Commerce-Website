@@ -1,21 +1,25 @@
+import 'package:e_commerce/features/cart/views/cart_screen.dart';
 import 'package:e_commerce/features/home/views/home_screen.dart';
+import 'package:e_commerce/features/product_details/views/product_details_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
+  initialLocation: '/',
   routes: <RouteBase>[
     GoRoute(
       path: '/',
-      builder: (context, state) {
-        return const HomeScreen();
-      },
-      routes: <RouteBase>[
-        // GoRoute(
-        //   path: 'details',
-        //   builder: (BuildContext context, GoRouterState state) {
-        //     return const DetailsScreen();
-        //   },
-        // ),
-      ],
+      name: 'home',
+      builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/product-details',
+      name: 'product_details',
+      builder: (context, state) => const ProductDetailsScreen(),
+    ),
+    GoRoute(
+      path: '/cart',
+      name: 'cart',
+      builder: (context, state) => const CartScreen(),
     ),
   ],
 );

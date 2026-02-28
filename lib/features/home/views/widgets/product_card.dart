@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../features/product_details/views/product_details_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductCard extends StatelessWidget {
   final String title;
@@ -17,10 +17,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const ProductDetailsScreen()),
-        );
+        context.pushNamed('product_details');
       },
       child: Container(
         padding: const EdgeInsets.all(12),
@@ -65,12 +62,7 @@ class ProductCard extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ProductDetailsScreen(),
-                  ),
-                );
+                context.pushNamed('product_details');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

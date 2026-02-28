@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../product_details/views/product_details_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class MainPromoBanner extends StatelessWidget {
   const MainPromoBanner({super.key});
@@ -41,12 +41,7 @@ class MainPromoBanner extends StatelessWidget {
           const SizedBox(height: 32),
           OutlinedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProductDetailsScreen(),
-                ),
-              );
+              context.pushNamed('product_details');
             },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,

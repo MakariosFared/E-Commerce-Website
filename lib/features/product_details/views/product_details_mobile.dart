@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/typography.dart';
 import '../../home/views/widgets/footer_section.dart';
@@ -60,7 +61,7 @@ class ProductDetailsMobile extends StatelessWidget {
                   const SizedBox(height: 24),
                   const ProductVariants(),
                   const SizedBox(height: 32),
-                  _buildActionButtons(),
+                  _buildActionButtons(context),
                   const SizedBox(height: 48),
                   const ProductDetailsSection(),
                   const SizedBox(height: 48),
@@ -78,14 +79,16 @@ class ProductDetailsMobile extends StatelessWidget {
     );
   }
 
-  Widget _buildActionButtons() {
+  Widget _buildActionButtons(BuildContext context) {
     return Column(
       children: [
         SizedBox(
           width: double.infinity,
           height: 56,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed('cart');
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
               foregroundColor: Colors.white,
@@ -105,7 +108,9 @@ class ProductDetailsMobile extends StatelessWidget {
           width: double.infinity,
           height: 56,
           child: OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed('cart');
+            },
             style: OutlinedButton.styleFrom(
               side: const BorderSide(color: AppColors.primary),
               shape: RoundedRectangleBorder(

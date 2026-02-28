@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/typography.dart';
-import '../views/product_details_screen.dart';
 
 class RelatedProducts extends StatelessWidget {
   const RelatedProducts({super.key});
@@ -32,10 +32,7 @@ class RelatedProducts extends StatelessWidget {
   Widget _buildRelatedProductItem(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const ProductDetailsScreen()),
-        );
+        context.pushNamed('product_details');
       },
       child: Container(
         decoration: BoxDecoration(
@@ -105,12 +102,7 @@ class RelatedProducts extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ProductDetailsScreen(),
-                          ),
-                        );
+                        context.pushNamed('cart');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
