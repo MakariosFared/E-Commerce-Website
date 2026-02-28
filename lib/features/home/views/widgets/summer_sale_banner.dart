@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../product_details/views/product_details_screen.dart';
 
 class SummerSaleBanner extends StatelessWidget {
   const SummerSaleBanner({super.key});
@@ -36,7 +37,14 @@ class SummerSaleBanner extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProductDetailsScreen(),
+                ),
+              );
+            },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               side: const BorderSide(color: Colors.white),
