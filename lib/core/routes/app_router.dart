@@ -2,6 +2,8 @@ import 'package:e_commerce/features/cart/views/cart_screen.dart';
 import 'package:e_commerce/features/home/views/home_screen.dart';
 import 'package:e_commerce/features/product_details/views/product_details_screen.dart';
 import 'package:e_commerce/features/checkout/views/checkout_screen.dart';
+import 'package:e_commerce/features/auth/views/login_screen.dart';
+import 'package:e_commerce/features/auth/views/register_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -11,6 +13,16 @@ final GoRouter appRouter = GoRouter(
       path: '/',
       name: 'home',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/login',
+      name: 'login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/register',
+      name: 'register',
+      builder: (context, state) => const RegisterScreen(),
     ),
     GoRoute(
       path: '/product-details',

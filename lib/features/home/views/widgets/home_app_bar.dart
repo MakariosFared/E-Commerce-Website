@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -17,6 +18,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           letterSpacing: -1,
         ),
       ),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.search, color: Colors.black),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const Icon(Icons.person_outline, color: Colors.black),
+          onPressed: () => context.pushNamed('login'),
+        ),
+      ],
     );
   }
 
