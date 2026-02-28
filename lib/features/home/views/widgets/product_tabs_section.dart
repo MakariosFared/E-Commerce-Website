@@ -69,7 +69,7 @@ class _ProductTabsSectionState extends State<ProductTabsSection> {
               mainAxisSpacing: 16,
             ),
             itemBuilder: (context, index) {
-              return ProductCard();
+              return const ProductCard(title: 'Product Name', price: '900');
             },
           ),
         ],

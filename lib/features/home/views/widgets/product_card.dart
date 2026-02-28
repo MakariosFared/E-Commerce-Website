@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final String title;
+  final String price;
+  final String? imagePath;
+
+  const ProductCard({
+    super.key,
+    required this.title,
+    required this.price,
+    this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
-  return Container(
+    return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: const Color(0xFFF9F9F9),
@@ -29,17 +38,17 @@ class ProductCard extends StatelessWidget {
             color: Colors.grey.shade300,
           ), // Placeholder image
           const SizedBox(height: 16),
-          const Text(
-            'Product Name',
+          Text(
+            title,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 8),
-          const Text(
-            '\$900',
-            style: TextStyle(
+          Text(
+            '\$$price',
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.5,

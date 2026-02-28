@@ -32,7 +32,7 @@ class DiscountSection extends StatelessWidget {
               mainAxisSpacing: 16,
             ),
             itemBuilder: (context, index) {
-              return ProductCard();
+              return const ProductCard(title: 'Discount Item', price: '299');
             },
           ),
         ],
